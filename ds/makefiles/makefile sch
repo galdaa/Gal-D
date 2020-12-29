@@ -1,0 +1,32 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+sch.out : scheduler.o scheduler_test.o uid.o task.o priority_queue.o sorted_list.o dlist.o 
+	$(gd) -o sch.out scheduler.o scheduler_test.o uid.o task.o priority_queue.o sorted_list.o dlist.o 
+
+objects = sch.out scheduler.o scheduler_test.o uid.o task.o priority_queue.o sorted_list.o dlist.o  
+
+scheduler.o : src/scheduler.c include/scheduler.h
+	$(gd) -c src/scheduler.c include/scheduler.h -I include/
+	
+scheduler_test.o : test/scheduler_test.c include/tests.h include/scheduler.h
+	$(gd) -c test/scheduler_test.c include/tests.h include/scheduler.h -I include/
+	
+uid.o : src/uid.c include/uid.h
+	$(gd) -c src/uid.c include/uid.h -I include/
+
+task.o : src/task.c include/task.h
+	$(gd) -c src/task.c include/task.h -I include/
+	
+priority_queue.o : src/priority_queue.c include/priority_queue.h
+	$(gd) -c src/priority_queue.c include/priority_queue.h -I include/
+
+sorted_list.o : src/sorted_list.c include/sorted_list.h
+	$(gd) -c src/sorted_list.c include/sorted_list.h -I include/
+
+dlist.o : src/dlist.c include/dlist.h
+	$(gd) -c src/dlist.c include/dlist.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

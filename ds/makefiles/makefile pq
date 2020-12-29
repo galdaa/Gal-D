@@ -1,0 +1,30 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+#gd = gcc -ansi -pedantic-errors -Wall -Wextra -DNDEBUG -o3
+#priority_queue
+#debug : 
+#	gg := $(gd)
+
+#release : 
+#	gg := $(gc)
+
+pq.out : priority_queue.o priority_queue_test.o sorted_list.o dlist.o
+	$(gd) -o pq.out priority_queue.o priority_queue_test.o sorted_list.o dlist.o
+
+objects = pq.out priority_queue.o priority_queue_test.o sorted_list.o dlist.o
+
+priority_queue.o : src/priority_queue.c include/priority_queue.h
+	$(gd) -c src/priority_queue.c include/priority_queue.h -I include/
+	
+priority_queue_test.o : test/priority_queue_test.c include/tests.h include/priority_queue.h
+	$(gd) -c test/priority_queue_test.c include/tests.h include/priority_queue.h -I include/
+
+sorted_list.o : src/sorted_list.c include/sorted_list.h
+	$(gd) -c src/sorted_list.c include/sorted_list.h -I include/
+
+dlist.o : src/dlist.c include/dlist.h
+	$(gd) -c src/dlist.c include/dlist.h -I include/	
+
+clean :
+	rm -f $(objects)
+	
+

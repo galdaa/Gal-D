@@ -1,0 +1,15 @@
+fooer.out : foo.o main.o 
+	cc -o fooer.out foo.o main.o 
+
+objects = foo.o main.o fooer.out 
+
+foo.o : src/foo.c include/foo.h
+	cc -c src/foo.c include/foo.h -I include/
+
+main.o : test/main.c include/foo.h
+	cc -c test/main.c include/foo.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

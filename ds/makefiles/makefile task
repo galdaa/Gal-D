@@ -1,0 +1,20 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+task.out : task.o task_test.o uid.o
+	$(gd) -o task.out task.o task_test.o uid.o 
+
+objects = task.out task.o task_test.o uid.o 
+
+task.o : src/task.c include/task.h
+	$(gd) -c src/task.c include/task.h -I include/
+	
+task_test.o : test/task_test.c include/tests.h include/task.h
+	$(gd) -c test/task_test.c include/tests.h include/task.h -I include/
+
+uid.o : src/uid.c include/uid.h
+	$(gd) -c src/uid.c include/uid.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

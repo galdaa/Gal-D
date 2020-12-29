@@ -1,0 +1,17 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+cb.out : circular_buffer.o circular_buffer_test.o 
+	$(gd) -o cb.out circular_buffer_test.o circular_buffer.o
+
+objects = circular_buffer_test.o circular_buffer.o slist.o cb.out 
+
+circular_buffer.o : src/circular_buffer.c include/circular_buffer.h
+	$(gd) -c src/circular_buffer.c include/circular_buffer.h -I include/
+
+circular_buffer_test.o : test/circular_buffer_test.c include/tests.h include/circular_buffer.h
+	$(gd) -c test/circular_buffer_test.c include/tests.h include/circular_buffer.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

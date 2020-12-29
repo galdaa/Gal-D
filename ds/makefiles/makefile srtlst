@@ -1,0 +1,27 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+#gd = gcc -ansi -pedantic-errors -Wall -Wextra -DNDEBUG -o3
+
+#debug : 
+#	gg := $(gd)
+
+#release : 
+#	gg := $(gc)
+
+srtl.out : sorted_list.o sorted_list_test.o dlist.o
+	$(gd) -o srtl.out dlist.o sorted_list_test.o sorted_list.o
+
+objects = sorted_list_test.o sorted_list.o dlist.o srtl.out 
+
+dlist.o : src/dlist.c include/dlist.h
+	$(gd) -c src/dlist.c include/dlist.h -I include/
+	
+sorted_list.o : src/sorted_list.c include/sorted_list.h
+	$(gd) -c src/sorted_list.c include/sorted_list.h -I include/
+
+sorted_list_test.o : test/sorted_list_test.c include/tests.h include/sorted_list.h
+	$(gd) -c test/sorted_list_test.c include/tests.h include/sorted_list.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

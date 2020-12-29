@@ -1,0 +1,7 @@
+push() {
+    git add ~/git/
+    git commit -m "$1"
+    git push
+}
+
+push "message"

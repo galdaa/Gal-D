@@ -1,0 +1,17 @@
+gpic = gcc -c -Wall -Werror -fpic foo.c #PIC
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+objects = dlist_test libdll.so dlist.o
+
+dlist_test.out : libdll.so dlist.o test/dlist_test.c include/tests.h 
+	gcc -L/home/gal/git/ds -Wall -o dlist_test.out test/dlist_test.c include/tests.h -llibdll  -I include/
+
+libdll.so : dlist.o
+	gcc -shared -o libdll.so dlist.o
+	
+dlist.o : src/dlist.c include/dlist.h
+	gcc -o dlist.o -c -Wall -Werror -fpic  src/dlist.c include/dlist.h -I include/
+	
+clean :
+	rm -f $(objects)
+	

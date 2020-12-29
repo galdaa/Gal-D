@@ -1,0 +1,17 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+vector.out : vector.o vector_test.o 
+	$(gd) -o vector.out vector_test.o vector.o 
+
+objects = vector_test.o vector.o vector.out 
+
+vector.o : src/vector.c include/vector.h
+	$(gd) -c src/vector.c include/vector.h -I include/
+
+vector_test.o : test/vector_test.c include/vector.h
+	$(gd) -c test/vector_test.c include/vector.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

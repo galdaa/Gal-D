@@ -1,0 +1,17 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+dl.out : dlist.o dlist_test.o 
+	$(gd) -o dl.out dlist_test.o dlist.o
+
+objects = dlist_test.o dlist.o dl.out 
+
+dlist.o : src/dlist.c include/dlist.h
+	$(gd) -c src/dlist.c include/dlist.h -I include/
+
+dlist_test.o : test/dlist_test.c include/tests.h include/dlist.h
+	$(gd) -c test/dlist_test.c include/tests.h include/dlist.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

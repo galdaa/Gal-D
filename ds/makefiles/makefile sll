@@ -1,0 +1,17 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+slist.out : slist.o slist_test.o 
+	$(gd) -o slist.out slist_test.o slist.o 
+
+objects = slist_test.o slist.o slist.out 
+
+slist.o : src/slist.c include/slist.h
+	$(gd) -c src/slist.c include/slist.h -I include/
+
+slist_test.o : test/slist_test.c include/slist.h
+	$(gd) -c test/slist_test.c include/slist.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

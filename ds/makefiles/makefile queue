@@ -1,0 +1,20 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+queue.out : queue.o slist.o queue_test.o 
+	$(gd) -o queue.out queue_test.o queue.o slist.o 
+
+objects = queue_test.o queue.o slist.o queue.out 
+
+slist.o : src/slist.c include/slist.h
+	$(gd) -c src/slist.c include/slist.h -I include/
+	
+queue.o : src/queue.c include/queue.h
+	$(gd) -c src/queue.c include/queue.h -I include/
+
+queue_test.o : test/queue_test.c include/tests.h include/queue.h
+	$(gd) -c test/queue_test.c include/tests.h include/queue.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+

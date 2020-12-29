@@ -1,0 +1,17 @@
+gd = gcc -ansi -pedantic-errors -Wall -Wextra -g
+
+fsa.out : fsa.o fsa_test.o
+	$(gd) -o fsa.out fsa.o fsa_test.o
+
+objects = fsa.out fsa.o fsa_test.o 
+
+fsa.o : src/fsa.c include/fsa.h
+	$(gd) -c src/fsa.c include/fsa.h -I include/
+	
+fsa_test.o : test/fsa_test.c include/tests.h include/fsa.h
+	$(gd) -c test/fsa_test.c include/tests.h include/fsa.h -I include/
+	
+clean :
+	rm -f $(objects)
+	
+
