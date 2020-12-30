@@ -1,27 +1,10 @@
-/******************************************
-DESCRIPTION: Solution of josephus problem.
+/*****************************************************
+DESCRIPTION: Implement Solution for josephus problem.
 Athor: Gal Dahan
 Reviewer: Arie Charfnadel
-*******************************************/
+******************************************************/
 
-#include <stdio.h>/*for print*/
 #include <stdlib.h>/*for malloc,free*/
-
-int FreeListSol(int soldiers_num);
-int LoopSol(int soldiers_num);
-
-int main()
-{
-	int num = 0;
-	
-	printf("Enter num of soldiers:");
-	scanf("%d", &num);
-	printf("The last by Loop solution is:%d\n", LoopSol(num));
-	printf("By 'Free list' solution The last is:%d\n",
-		 FreeListSol(num));
-		 
-	return 0;
-}
 
 /*compute the last using loops*/
 int LoopSol(int soldiers_num)
@@ -36,7 +19,7 @@ int LoopSol(int soldiers_num)
 	lives = soldiers_num;
 	
 	/*all lives*/
-	for (i = 0; i < soldiers_num; i++)
+	for (i = 0; i < soldiers_num; ++i)
 	{
 		*(soldiers + i) = 'L';
 	}
@@ -45,7 +28,7 @@ int LoopSol(int soldiers_num)
 	{
 		lives = 0;
 		
-		for (i = 0; i < soldiers_num; i++)
+		for (i = 0; i < soldiers_num; ++i)
 		{
 				
 			/*kill- if this is the second sol' that lives*/

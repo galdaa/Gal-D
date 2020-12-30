@@ -12,14 +12,13 @@ Reviewer: Ronny Efronny
 int main(int argc, char *argv[], char *envp[])
 {
 	int i = 0;
-	int j = 0;
   	int size = 0;
   	int size_var = 0;
   	char **buff = NULL;
   	
   	while (envp[i])
   	{
-    		i++;
+    		++i;
     	}
     	
     	size = i;
@@ -28,18 +27,20 @@ int main(int argc, char *argv[], char *envp[])
 	
 	while (i < size)
   	{
+  		int j = 0;
+  		
   		size_var = strlen(*(envp + i));
   		*(buff + i) = (char *) malloc((size_var+ 1)*sizeof(char));
     		strcpy(*(buff + i), *(envp + i));
     		
     		/*to lower case*/
-    		for(j = 0; j < size_var; j++)
+    		for(j = 0; j < size_var; ++j)
   		{
   			*(*(buff + i) + j) = tolower(*(*(buff + i) + j));
   		}
   		
   		printf("%s\n", *(buff + i));
-    		i++;
+    		++i;
     	}
   	
 	i = 0;
@@ -47,13 +48,14 @@ int main(int argc, char *argv[], char *envp[])
   	while (i < size)
   	{
   		printf("%s\n", *(buff + i));
-    		i++;
+    		++i;
     	}
     	
 
-    	for(i = 0; i < size; i++)
+    	for(i = 0; i < size; ++i)
   		free(*(buff + i));
   	
   	free(buff);
+  	
     	return 0;
 }

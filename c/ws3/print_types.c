@@ -1,3 +1,9 @@
+/******************************************
+DESCRIPTION: Print size of deference types.
+Athor: Gal Dahan
+Reviewer: Arie Charfnadel
+*******************************************/
+
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
