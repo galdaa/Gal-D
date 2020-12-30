@@ -18,5 +18,6 @@ int main()
 	printf("size of lon double:%d\n", (int)sizeof(long double));
 	printf("size of wchar_t:%d\n", (int)sizeof(wchar_t));
 	printf("size of size_t:%d\n", (int)sizeof(size_t));
+	
 return 0;
 }

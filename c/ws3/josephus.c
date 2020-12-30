@@ -1,22 +1,25 @@
-#include <stdio.h>/*for print*/
-#include <stdlib.h>/*for malloc,free*/
-/*************************************
-DESCRIPTION: compute josephus problem
+/******************************************
+DESCRIPTION: Solution of josephus problem.
 Athor: Gal Dahan
 Reviewer: Arie Charfnadel
-*************************************/
+*******************************************/
 
-int LinkListSol(int soldiers_num);
+#include <stdio.h>/*for print*/
+#include <stdlib.h>/*for malloc,free*/
+
+int FreeListSol(int soldiers_num);
 int LoopSol(int soldiers_num);
 
 int main()
 {
 	int num = 0;
+	
 	printf("Enter num of soldiers:");
 	scanf("%d", &num);
-	printf("The last is:%d\n", LoopSol(num));
-	printf("By 'Linked list' solution The last is:%d\n",
-		 LinkListSol(num));
+	printf("The last by Loop solution is:%d\n", LoopSol(num));
+	printf("By 'Free list' solution The last is:%d\n",
+		 FreeListSol(num));
+		 
 	return 0;
 }
 
@@ -28,6 +31,7 @@ int LoopSol(int soldiers_num)
 	int count = 0;
 	int lives = 0;/*how nuch lives in that round*/
 	int last = 1;
+	
 	soldiers = (char *) malloc(soldiers_num + 1);
 	lives = soldiers_num;
 	
@@ -61,11 +65,13 @@ int LoopSol(int soldiers_num)
 		}
 	
 	}
+	
 	free(soldiers);
+	
 	return last;
 }
 
-int LinkListSol(int soldiers_num)
+int FreeListSol(int soldiers_num)
 {
 	int i = 0;
 	int *soldiers = (int *) malloc(soldiers_num + 1);

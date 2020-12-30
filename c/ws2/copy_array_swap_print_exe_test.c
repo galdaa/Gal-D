@@ -1,73 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* *************************************************
+DESCRIPTION: 
+	
+	Test of:
+		Copy int array,
+		
+		Swap functions: 
+			Int by poiners. 
+			Values by size_t pointers.
+			Pointers by size_t **.
+		
+		PrintAdresses exe.
+
+Athor: Gal Dahan
+***************************************************/
+
+#include <stdio.h>	/* printf */
+#include <stdlib.h> 	/* for size_t */
 
 int CopyArray(int *arr1, int size1, int *arr2, int size2);
 void PrintAdresses ();
 void SwapSizeT (size_t *a, size_t *b);
 void SwapSizeTPointers (size_t **a, size_t **b);
-void SwapInt ( int *a, int *b );
-
-/* returns (-1) if fails*/
-int CopyArray(int *arr1, int size1, int *arr2, int size2)
-{
-	int i = 0;
-	
-	/* return error if the size differnt */
-	if (size1 != size2)
-		return -1;
-		
-	/* copy */
-	for (i=0 ; i < size1 ; i++)
-		arr2[i] = arr1[i];
-		
-	return 0;
-}
-
-void PrintAdresses()
-{
-	static int s_i = 7;
-	int i = 7;
-	int *ptr = &i;
-	int *ptr2 = (int *) malloc(sizeof(int));
-	
-	if (ptr)
-	{
-		&ptr;
-	}
-	
-	free(ptr2);
-	
-	/*print by using (void*) to hold any kind of pointer */
-	printf("s_i: %p \ni:   %p \nptr: %p \nptr2:%p \n",
-		 (void*) &s_i, (void*) &i, (void*) &ptr, (void*) &ptr2 );
-} 
-
-/* Swap values of 2 size_t variables */
-void SwapSizeT(size_t *a, size_t *b)
-{
-	size_t temp;
-	temp= *a;
-	*a= *b;
-	*b= temp;
-}
-
-/* Swap values of 2 size_t* variables */
-void SwapSizeTPointers(size_t **a, size_t **b)
-{
-	size_t *temp;
-	temp= *a;
-	*a= *b;
-	*b= temp;
-}
-
-/* Swap values of 2 int variables */
-void SwapInt(int *a, int *b)
-{
-	int temp;
-	temp= *a;
-	*a= *b;
-	*b= temp;
-}
+void SwapInt (int *a, int *b);
 
 int main()
 {

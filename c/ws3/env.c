@@ -3,7 +3,7 @@
 #include <string.h>/*for strlen,%s,strcmp...*/
 
 /*************************************
-DESCRIPTION: prints the enviorment 
+DESCRIPTION: Prints the enviorment 
 	variables in lower case.
 Athor: Gal Dahan
 Reviewer: Ronny Efronny
