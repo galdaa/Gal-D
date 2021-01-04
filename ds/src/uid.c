@@ -9,7 +9,7 @@ Reviewer: Ronny Efronny
 
 ilrd_uid_t UIDCreate(void)
 {
-	ilrd_uid_t new_uid;
+	ilrd_uid_t new_uid = {0};
 	
 	static pid_t pid_counter = 1;
 	
@@ -49,7 +49,7 @@ int UIDIsSame(ilrd_uid_t lhs, ilrd_uid_t rhs)
 
 ilrd_uid_t UIDGetBadUid(void)
 {
-	ilrd_uid_t bad_uid;
+	ilrd_uid_t bad_uid = {0};
 	
 	bad_uid.timestamp = 0;
 	bad_uid.pid = 0;

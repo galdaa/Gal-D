@@ -84,11 +84,11 @@ void SchedClear(sched_t *sch)
 }
 
 ilrd_uid_t SchedAddTask(sched_t *sch, 
-						int (*func_to_execute)(void *params),
-				 		void *params, 
-				 		size_t freq, 
-				 		size_t time_to_exec,
-				 		int (*destroy_params)(void *params))
+					int (*func_to_execute)(void *params),
+			 		void *params, 
+			 		size_t freq, 
+			 		size_t time_to_exec,
+			 		int (*destroy_params)(void *params))
 {
 	task_t *new_task = NULL;
 	ilrd_uid_t new_uid = UIDGetBadUid();
