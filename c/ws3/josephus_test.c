@@ -1,6 +1,6 @@
 /******************************************
 DESCRIPTION: Test for josephus problem.
-Athor: Gal Dahan
+Author: Gal Dahan
 Reviewer: Arie Charfnadel
 *******************************************/
 

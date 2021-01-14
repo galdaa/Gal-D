@@ -1,7 +1,13 @@
 /*****************************************************
 DESCRIPTION: Implement Solution for josephus problem.
-Athor: Gal Dahan
+Author: Gal Dahan
 Reviewer: Arie Charfnadel
+
+The mathematical solution is:
+	If the number of soldiers = 2^a + l
+	Represented as pwoer of 2 + res (= l)
+	-> last = 2*l + 1
+	In bits it's mean to put the MSB in LSB of l.
 ******************************************************/
 
 #include <stdlib.h>/*for malloc,free*/
@@ -12,7 +18,7 @@ int LoopSol(int soldiers_num)
 	char* soldiers = NULL;
 	int i = 0;
 	int count = 0;
-	int lives = 0;/*how nuch lives in that round*/
+	int lives = 0;/*how much lives in that round*/
 	int last = 1;
 	
 	soldiers = (char *) malloc(soldiers_num + 1);
@@ -68,7 +74,7 @@ int FreeListSol(int soldiers_num)
 	i = 0;
 	
 	/*every soldier point on what his next points 
-		-becouse the next now dead*/
+		-because the next now dead*/
 	while( soldiers[soldiers[i]] != soldiers[i])
 	{
 		soldiers[i] = soldiers[soldiers[i]];

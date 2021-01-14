@@ -3,7 +3,7 @@ DESCRIPTION: Implementation of Atoi, Itoa for any bases.
 	Checking function & macro of Little/Big Endian system.
 	Prints the commons letters in two from 3 strings.
 	Using: macro, enum.
-Athor: Gal Dahan
+Author: Gal Dahan
 Reviewer: Yuval Ben Ari
 **********************************************************/
 #include <stdio.h>/*printf*/
