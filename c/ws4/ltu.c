@@ -1,10 +1,11 @@
-/***********************************************
+/*************************************************
 DESCRIPTION: the program prints the press 
 	letter only for A T Esc using LTU.
 	Press Exp to end.
+	Using: system call "stty -icanon -echo".
 Athor: Gal Dahan
 Reviewer: Arie Charfnadel
-***********************************************/
+**************************************************/
 
 #include <stdio.h> /* for printf*/
 #include <stdlib.h>/* for system*/

@@ -4,7 +4,7 @@ Author: Gal Dahan
 Reviewer: Arie Charfnadel
 *******************************************/
 
-#include <stdio.h>/*for print*/
+#include <stdio.h>	/* for printf */
 
 int FreeListSol(int soldiers_num);
 int LoopSol(int soldiers_num);

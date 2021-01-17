@@ -1,13 +1,14 @@
-/***********************************************
-DESCRIPTION: the program prints the press 
+/*************************************************
+DESCRIPTION: The program prints the press 
 	letter only for A T Esc using if-else.
 	Press Exp to end.
+	Using: system call "stty -icanon -echo".
 Athor: Gal Dahan
 Reviewer: Arie Charfnadel
-***********************************************/
+*************************************************/
 
-#include <stdio.h> /* for printf*/
-#include <stdlib.h>/* for system*/
+#include <stdio.h> 	/* for printf*/
+#include <stdlib.h>	/* for system*/
 
 #define ESC 27
 
@@ -20,7 +21,7 @@ int main()
 
 	while (ESC != c)
 	{
-		if ((c == 'T') || (c == 'A'))
+		if (('T' == c) || ('A' == c))
 		{
 			printf("%c pressed\n", c);
 		}

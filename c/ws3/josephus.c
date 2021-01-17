@@ -10,21 +10,21 @@ The mathematical solution is:
 	In bits it's mean to put the MSB in LSB of l.
 ******************************************************/
 
-#include <stdlib.h>/*for malloc,free*/
+#include <stdlib.h>/* For malloc, free */
 
-/*compute the last using loops*/
+/*Compute the last using loops*/
 int LoopSol(int soldiers_num)
 {
 	char* soldiers = NULL;
 	int i = 0;
 	int count = 0;
-	int lives = 0;/*how much lives in that round*/
+	int lives = 0;/*How much lives in that round*/
 	int last = 1;
 	
 	soldiers = (char *) malloc(soldiers_num + 1);
 	lives = soldiers_num;
 	
-	/*all lives*/
+	/*All lives*/
 	for (i = 0; i < soldiers_num; ++i)
 	{
 		*(soldiers + i) = 'L';
@@ -37,7 +37,7 @@ int LoopSol(int soldiers_num)
 		for (i = 0; i < soldiers_num; ++i)
 		{
 				
-			/*kill- if this is the second sol' that lives*/
+			/*Kill- if this is the second sol' that lives*/
 			if ((1 == count) && ('L' == *(soldiers + i)))
 			{
 				*(soldiers + i) = 'D';
@@ -73,7 +73,7 @@ int FreeListSol(int soldiers_num)
 	
 	i = 0;
 	
-	/*every soldier point on what his next points 
+	/*Every soldier point on what his next points 
 		-because the next now dead*/
 	while( soldiers[soldiers[i]] != soldiers[i])
 	{
@@ -82,5 +82,6 @@ int FreeListSol(int soldiers_num)
 	}
 	
 	free(soldiers);
+	
 	return i - 1;
 }

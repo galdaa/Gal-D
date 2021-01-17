@@ -2,6 +2,7 @@
 DESCRIPTION: the program prints the press 
 	letter only for A T Esc using switch-case.
 	Press Exp to end.
+	Using: system call "stty -icanon -echo".
 Athor: Gal Dahan
 Reviewer: Arie Charfnadel
 ***************************************************/
