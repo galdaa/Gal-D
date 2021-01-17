@@ -7,21 +7,21 @@ Athor: Gal Dahan
 Reviewer: Yifat Baruch
 *************************************************************************/
 
-#include <string.h> /*for string,%s*/
-#include <stdio.h> /*for print & input*/
-#include <string.h> /*for compare string functions: strlen, strcpy, strchr, ... */
-#include <stdlib.h>/*for (void)- unesd values, exit, void (*ptr)(int);*/
+#include <string.h> /* for string,%s */
+#include <stdio.h> /* for print & input */
+#include <string.h> /* for compare string functions: strlen, strcpy, strchr, ... */
+#include <stdlib.h>/* for (void)- unesd values, exit, void (*ptr)(int); */
 
 #define MAX 100/*max size of string input and copy*/
 #define COMMANDS 4/*num' of commands*/
 
-enum return_val {failed = -1, succeeded = 1};/*return value for the functions*/
+enum return_val {failed = -1, succeeded = 1};/* return value for the functions */
 
-enum return_val Append(char *file_name, char* str);/*add input string to file end*/
-enum return_val Remove(char *file_name, char* str);/*remove input file*/
-enum return_val Count(char *file_name, char* str);/*print the lines number of input file*/
-enum return_val Exit(char *file_name, char* str);/*exit from program running*/
-enum return_val StartAdd(char *file_name, char* str);/*add input string to file start*/
+enum return_val Append(char *file_name, char* str);/* add input string to file end */
+enum return_val Remove(char *file_name, char* str);/* remove input file */
+enum return_val Count(char *file_name, char* str);/* print the lines number of input file */
+enum return_val Exit(char *file_name, char* str);/* exit from program running */
+enum return_val StartAdd(char *file_name, char* str);/* add input string to file start */
 
 /*compare between two strings
 	-return the differnce*/

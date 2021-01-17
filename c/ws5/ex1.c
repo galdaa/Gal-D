@@ -1,5 +1,7 @@
 /**************************************************
-DESCRIPTION: Create array of struct of
+DESCRIPTION: 
+	Practice on struct & funcion's pointer:	
+	Create array of struct of
 	different values and pointer to
 		function that prints.
 	Using: funcions pointers, struct and array.
@@ -7,8 +9,8 @@ Athor: Gal Dahan
 Reviewer: Yifat Baruch
 ***************************************************/
 
-#include <stdio.h> /* for printf*/
-#include <stdlib.h>/* for void (*ptr)(int);*/
+#include <stdio.h> 	/* for printf */
+#include <stdlib.h>	/* for void (*ptr)(int); */
 
 void Print(int val);
 
@@ -20,19 +22,19 @@ int main()
 	{
 		int var; 
 		void (*ptr)(int);
-	} ;
+	};
 	
-	struct print_me arr[10];
+	struct print_me arr[10] = {0};
 	
-	/*initial arr with values
-		and point to Print  functio*/
-	for(i = 0; i < 10; i++)
+	/*Initial arr with values
+		and point to Print function*/
+	for(i = 0; 10 > i; ++i)
 	{
 		arr[i].var = i;
 		arr[i].ptr = Print;
 	}
 	
-	for(i = 0; i < 10; i++)
+	for(i = 0; 10 > i; ++i)
 	{
 		arr[i].ptr(arr[i].var);
 	}
