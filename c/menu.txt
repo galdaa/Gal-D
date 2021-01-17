@@ -1,0 +1,51 @@
+ws1:
+	Basic c.
+	basic_c.c:
+		Implemets of:
+			Print by asci.
+			Calculate 10^n.
+			Flip digits.
+			Swap.
+ws2:
+	String functions + swap +.
+	strOp.c
+		Implemet string functions:
+			StrLen, StrCmp, StrCpy, StrNCpy, 
+			StrCaseCmp,StrChr, StrDup, 
+			StrCat, StrNCat, StrStr, StrSpn.
+	palindrome.c
+		Implemets of IfPalindrome (string).
+	
+	copy_array.c
+		Implemets of:
+			Copy int array
+	
+	print_exe.c
+		PrintAdresses exe.
+	
+	swap.c
+		Implemets of Swap functions: 
+			Int by poiners. 
+			Values by size_t pointers.
+			Pointers by size_t **.
+ws3:
+	Exs.
+	josephus.c
+		Implement Solution for josephus problem.
+	env.c
+		Prints the enviorment variables in lower case.
+	print_type.c	
+		Print size of deference types.
+ws4:
+	Programs to prints the press 
+	letter only for A T Esc using if-else/LTU/switch-case.
+	Press Exp to end.
+		using: system call "stty -icanon -echo".
+ws5:
+	Struct & funcion's pointer + opreations on file.
+	ex1.c
+		Practice on struct & funcion's pointer:	
+		Create array of struct of
+		different values and pointer to
+		function that prints.
+		Using: funcions pointers, struct and array.
