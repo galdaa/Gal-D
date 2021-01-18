@@ -42,10 +42,16 @@ ws4:
 	Press Exp to end.
 		using: system call "stty -icanon -echo".
 ws5:
-	Struct & funcion's pointer + opreations on file.
+	Struct & funcion's pointer + opreations on file, enum.
 	ex1.c
 		Practice on struct & funcion's pointer:	
 		Create array of struct of
 		different values and pointer to
 		function that prints.
 		Using: funcions pointers, struct and array.
+	file_op.c
+		Menu of opreation on file: 
+		append string, remove by "-remove", count lines by "-count",
+		add string to start by "<string" and exit by "-exit".
+		Using: File functions, funcions pointers, struct, enum ,arry
+		and responsibility chain.

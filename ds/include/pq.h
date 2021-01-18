@@ -1,13 +1,12 @@
 #ifndef __PRIORITY_QUEUE_H_OL97_ILRD__
 #define __PRIORITY_QUEUE_H_OL97_ILRD__
 
-/*******************************************************************************
- *
- * Header file Containing API Definitions for
- * Priority Queue ADT & its interface operations and declarations.
- *
- * Infinity Labs - OL97                                                      
- ******************************************************************************/
+/******************************************************************************
+* Header file Containing API Definitions for
+* Priority Queue ADT & its interface operations and declarations.
+*
+* Infinity Labs - OL97                                                      
+******************************************************************************/
  
 /******************************************************************************/
 /***                               Includes                                 ***/
